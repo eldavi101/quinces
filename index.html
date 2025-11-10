@@ -1,0 +1,467 @@
+<!doctype html>
+<html lang="es">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invitación Quinceañera - Claudia</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <style>
+        body {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ffeef8 0%, #ffe4f3 100%);
+            min-height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 800px;
+            margin: 40px auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            padding: 60px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '✨';
+            position: absolute;
+            font-size: 80px;
+            opacity: 0.2;
+            top: 10px;
+            left: 20px;
+            animation: sparkle 3s infinite;
+        }
+
+        .header::after {
+            content: '✨';
+            position: absolute;
+            font-size: 80px;
+            opacity: 0.2;
+            bottom: 10px;
+            right: 20px;
+            animation: sparkle 3s infinite 1.5s;
+        }
+
+        @keyframes sparkle {
+            0%, 100% { opacity: 0.2; transform: scale(1); }
+            50% { opacity: 0.4; transform: scale(1.1); }
+        }
+
+        .crown {
+            font-size: 60px;
+            margin-bottom: 20px;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .title {
+            font-size: 48px;
+            color: white;
+            margin: 0;
+            font-weight: bold;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .subtitle {
+            font-size: 28px;
+            color: white;
+            margin: 10px 0 0 0;
+            font-style: italic;
+        }
+
+        .content {
+            padding: 50px 40px;
+        }
+
+        .celebrant-name {
+            font-size: 56px;
+            text-align: center;
+            color: #c44569;
+            margin: 0 0 30px 0;
+            font-weight: bold;
+            font-family: 'Brush Script MT', cursive;
+        }
+
+        .message {
+            text-align: center;
+            font-size: 20px;
+            color: #555;
+            line-height: 1.6;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+        .details-section {
+            background: #fff5f9;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border: 2px solid #ffcce0;
+        }
+
+        .detail-item {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .detail-icon {
+            font-size: 32px;
+            margin-right: 15px;
+            min-width: 40px;
+            text-align: center;
+        }
+
+        .detail-content {
+            flex: 1;
+        }
+
+        .detail-label {
+            font-weight: bold;
+            color: #c44569;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .detail-text {
+            color: #555;
+        }
+
+        .rsvp-section {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 40px;
+            border-top: 2px solid #ffcce0;
+        }
+
+        .rsvp-title {
+            font-size: 24px;
+            color: #c44569;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .rsvp-button {
+            background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            font-size: 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(196, 69, 105, 0.3);
+            transition: all 0.3s ease;
+            font-weight: bold;
+        }
+
+        .rsvp-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(196, 69, 105, 0.4);
+        }
+
+        .rsvp-button:active {
+            transform: translateY(-1px);
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            color: #666;
+            font-size: 16px;
+        }
+
+        .footer {
+            background: #fff5f9;
+            padding: 30px;
+            text-align: center;
+            color: #888;
+            font-size: 16px;
+        }
+
+        .decorative-line {
+            width: 100px;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, #ff6b9d, transparent);
+            margin: 30px auto;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                width: 95%;
+                margin: 20px auto;
+            }
+
+            .header {
+                padding: 40px 20px;
+            }
+
+            .title {
+                font-size: 36px;
+            }
+
+            .subtitle {
+                font-size: 22px;
+            }
+
+            .celebrant-name {
+                font-size: 42px;
+            }
+
+            .content {
+                padding: 30px 20px;
+            }
+
+            .message {
+                font-size: 18px;
+            }
+
+            .details-section {
+                padding: 20px;
+            }
+
+            .detail-item {
+                font-size: 16px;
+            }
+
+            .rsvp-button {
+                padding: 15px 40px;
+                font-size: 18px;
+            }
+        }
+    </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="container">
+   <div class="header">
+    <div class="crown">
+     👑
+    </div>
+    <h1 class="title" id="invitation-title">Mis Quince Años</h1>
+    <p class="subtitle">Una celebración especial</p>
+   </div>
+   <div class="content">
+    <h2 class="celebrant-name" id="celebrant-name">Claudia</h2>
+    <img src="images/Claudia.jpg">
+    <div class="decorative-line"></div>
+    <p class="message" id="personal-message">Tengo el honor de invitarte a celebrar conmigo este momento tan especial. Acompáñame en esta noche mágica donde celebraré mis quince años rodeada de las personas que más quiero.</p>
+    <div class="details-section">
+     <div class="detail-item">
+      <div class="detail-icon">
+       📅
+      </div>
+      <div class="detail-content"><span class="detail-label">Fecha</span> <span class="detail-text" id="event-date">Sábado, 15 de Junio de 2024</span>
+      </div>
+     </div>
+     <div class="detail-item">
+      <div class="detail-icon">
+       🕐
+      </div>
+      <div class="detail-content"><span class="detail-label">Hora</span> <span class="detail-text" id="event-time">7:00 PM</span>
+      </div>
+     </div>
+     <div class="detail-item">
+      <div class="detail-icon">
+       🏛️
+      </div>
+      <div class="detail-content"><span class="detail-label">Lugar</span> <span class="detail-text" id="venue-name">Salón de Eventos La Rosaleda</span>
+      </div>
+     </div>
+     <div class="detail-item">
+      <div class="detail-icon">
+       📍
+      </div>
+      <div class="detail-content"><span class="detail-label">Dirección</span> <span class="detail-text" id="venue-address">Av. Principal #123, Ciudad</span>
+      </div>
+     </div>
+    </div>
+    <div class="rsvp-section">
+     <h3 class="rsvp-title" id="rsvp-text">Confirma tu asistencia</h3><button class="rsvp-button" id="rsvp-button">Confirmar Asistencia</button>
+     <p class="contact-info" id="contact-info">WhatsApp: +52 123 456 7890</p>
+    </div>
+   </div>
+   <div class="footer">
+    <p>¡Espero contar con tu presencia! 💕</p>
+   </div>
+  </div>
+  <script>
+        const defaultConfig = {
+            celebrant_name: "Claudia",
+            invitation_title: "Mis Quince Años",
+            event_date: "Sábado, 15 de Junio de 2024",
+            event_time: "7:00 PM",
+            venue_name: "Salón de Eventos La Rosaleda",
+            venue_address: "Av. Principal #123, Ciudad",
+            personal_message: "Tengo el honor de invitarte a celebrar conmigo este momento tan especial. Acompáñame en esta noche mágica donde celebraré mis quince años rodeada de las personas que más quiero.",
+            rsvp_text: "Confirma tu asistencia",
+            contact_info: "WhatsApp: +52 123 456 7890",
+            background_color: "#ffeef8",
+            header_color: "#ff6b9d",
+            accent_color: "#c44569",
+            text_color: "#333333",
+            font_family: "Georgia",
+            font_size: 16
+        };
+
+        async function onConfigChange(config) {
+            const baseSize = config.font_size || defaultConfig.font_size;
+            const customFont = config.font_family || defaultConfig.font_family;
+            const baseFontStack = 'Georgia, serif';
+            const fontFamily = `${customFont}, ${baseFontStack}`;
+
+            document.body.style.fontFamily = fontFamily;
+            document.body.style.background = `linear-gradient(135deg, ${config.background_color || defaultConfig.background_color} 0%, ${config.header_color || defaultConfig.header_color}22 100%)`;
+
+            const header = document.querySelector('.header');
+            header.style.background = `linear-gradient(135deg, ${config.header_color || defaultConfig.header_color} 0%, ${config.accent_color || defaultConfig.accent_color} 100%)`;
+
+            document.getElementById('celebrant-name').textContent = config.celebrant_name || defaultConfig.celebrant_name;
+            document.getElementById('celebrant-name').style.color = config.accent_color || defaultConfig.accent_color;
+            document.getElementById('celebrant-name').style.fontSize = `${baseSize * 3.5}px`;
+
+            document.getElementById('invitation-title').textContent = config.invitation_title || defaultConfig.invitation_title;
+            document.getElementById('invitation-title').style.fontSize = `${baseSize * 3}px`;
+
+            document.getElementById('event-date').textContent = config.event_date || defaultConfig.event_date;
+            document.getElementById('event-time').textContent = config.event_time || defaultConfig.event_time;
+            document.getElementById('venue-name').textContent = config.venue_name || defaultConfig.venue_name;
+            document.getElementById('venue-address').textContent = config.venue_address || defaultConfig.venue_address;
+            document.getElementById('personal-message').textContent = config.personal_message || defaultConfig.personal_message;
+            document.getElementById('personal-message').style.fontSize = `${baseSize * 1.25}px`;
+
+            document.getElementById('rsvp-text').textContent = config.rsvp_text || defaultConfig.rsvp_text;
+            document.getElementById('rsvp-text').style.color = config.accent_color || defaultConfig.accent_color;
+            document.getElementById('rsvp-text').style.fontSize = `${baseSize * 1.5}px`;
+
+            document.getElementById('contact-info').textContent = config.contact_info || defaultConfig.contact_info;
+            document.getElementById('contact-info').style.fontSize = `${baseSize}px`;
+
+            const detailLabels = document.querySelectorAll('.detail-label');
+            detailLabels.forEach(label => {
+                label.style.color = config.accent_color || defaultConfig.accent_color;
+            });
+
+            const detailTexts = document.querySelectorAll('.detail-text');
+            detailTexts.forEach(text => {
+                text.style.color = config.text_color || defaultConfig.text_color;
+            });
+
+            const rsvpButton = document.getElementById('rsvp-button');
+            rsvpButton.style.background = `linear-gradient(135deg, ${config.header_color || defaultConfig.header_color} 0%, ${config.accent_color || defaultConfig.accent_color} 100%)`;
+            rsvpButton.style.fontSize = `${baseSize * 1.25}px`;
+
+            const subtitle = document.querySelector('.subtitle');
+            subtitle.style.fontSize = `${baseSize * 1.75}px`;
+
+            const detailItems = document.querySelectorAll('.detail-item');
+            detailItems.forEach(item => {
+                item.style.fontSize = `${baseSize * 1.125}px`;
+            });
+        }
+
+        if (window.elementSdk) {
+            window.elementSdk.init({
+                defaultConfig,
+                onConfigChange,
+                mapToCapabilities: (config) => ({
+                    recolorables: [
+                        {
+                            get: () => config.background_color || defaultConfig.background_color,
+                            set: (value) => {
+                                config.background_color = value;
+                                window.elementSdk.setConfig({ background_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.header_color || defaultConfig.header_color,
+                            set: (value) => {
+                                config.header_color = value;
+                                window.elementSdk.setConfig({ header_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.accent_color || defaultConfig.accent_color,
+                            set: (value) => {
+                                config.accent_color = value;
+                                window.elementSdk.setConfig({ accent_color: value });
+                            }
+                        },
+                        {
+                            get: () => config.text_color || defaultConfig.text_color,
+                            set: (value) => {
+                                config.text_color = value;
+                                window.elementSdk.setConfig({ text_color: value });
+                            }
+                        }
+                    ],
+                    borderables: [],
+                    fontEditable: {
+                        get: () => config.font_family || defaultConfig.font_family,
+                        set: (value) => {
+                            config.font_family = value;
+                            window.elementSdk.setConfig({ font_family: value });
+                        }
+                    },
+                    fontSizeable: {
+                        get: () => config.font_size || defaultConfig.font_size,
+                        set: (value) => {
+                            config.font_size = value;
+                            window.elementSdk.setConfig({ font_size: value });
+                        }
+                    }
+                }),
+                mapToEditPanelValues: (config) => new Map([
+                    ["celebrant_name", config.celebrant_name || defaultConfig.celebrant_name],
+                    ["invitation_title", config.invitation_title || defaultConfig.invitation_title],
+                    ["event_date", config.event_date || defaultConfig.event_date],
+                    ["event_time", config.event_time || defaultConfig.event_time],
+                    ["venue_name", config.venue_name || defaultConfig.venue_name],
+                    ["venue_address", config.venue_address || defaultConfig.venue_address],
+                    ["personal_message", config.personal_message || defaultConfig.personal_message],
+                    ["rsvp_text", config.rsvp_text || defaultConfig.rsvp_text],
+                    ["contact_info", config.contact_info || defaultConfig.contact_info]
+                ])
+            });
+        }
+
+        document.getElementById('rsvp-button').addEventListener('click', function() {
+            const button = this;
+            const originalText = button.textContent;
+            
+            button.textContent = '¡Confirmado! ✓';
+            button.style.background = 'linear-gradient(135deg, #4CAF50 0%, #45a049 100%)';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                const config = window.elementSdk ? window.elementSdk.config : defaultConfig;
+                button.style.background = `linear-gradient(135deg, ${config.header_color || defaultConfig.header_color} 0%, ${config.accent_color || defaultConfig.accent_color} 100%)`;
+            }, 2000);
+        });
+    </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'99c8ab42b4794065',t:'MTc2MjgxMDQxNC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
